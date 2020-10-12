@@ -8,13 +8,12 @@ import StorefrontIcon from "@material-ui/icons/Storefront";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import SidebarRow from "./SidebarRow";
+import { useStateValue } from "../../StateMangement/StateProvider";
 const Sidebar = () => {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="sidebar">
-      <SidebarRow
-        src="https://lh3.googleusercontent.com/a-/AOh14Gj-n9beS930W0hKV4wvcYdgf_3wnfoO5wKCDqnKPw=s96-c"
-        title="asad.97"
-      />
+      <SidebarRow src={user.photoURL} title={user.displayName} />
       <SidebarRow
         Icon={LocalHospitalIcon}
         title="COVID-19 Information Center"

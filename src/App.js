@@ -8,9 +8,11 @@ import Widgets from "././Components/Widgets/Widgets";
 import Login from "././Components/Login/Login";
 
 import "./App.css";
+import { useStateValue } from "./StateMangement/StateProvider";
 
 function App() {
-  const user = null;
+  const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className="app">
       {!user ? (
